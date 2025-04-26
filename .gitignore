@@ -1,0 +1,14 @@
+# .gitignore
+.idea/
+venv/
+__pycache__/
+*.py[cod]
+.env
+*.sqlite3
+*.db
+*.sqlite
+.DS_Store
+*.log
+*.pot
+*.pyc
+/local_settings.py
