@@ -1,14 +1,26 @@
-# .gitignore
-.idea/
-venv/
-__pycache__/
-*.py[cod]
-.env
-*.sqlite3
-*.db
-*.sqlite
-.DS_Store
-*.log
-*.pot
-*.pyc
-/local_settings.py
+# IDE
+  .idea/
+  *.swp
+  .vscode/
+
+  # Python
+  __pycache__/
+  *.pyc
+  *.pyo
+  *.pyd
+
+  # Virtual Environment
+  venv/
+  .venv/
+  env/
+
+  # Database
+  *.sqlite3
+  *.db
+
+  # Environment
+  .env
+  .env.local
+
+  # Logs
+  *.log
