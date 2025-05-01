@@ -17,6 +17,7 @@
   # Database
   *.sqlite3
   *.db
+  db.sqlite3
 
   # Environment
   .env
@@ -24,3 +25,5 @@
 
   # Logs
   *.log
+
+  /media/
