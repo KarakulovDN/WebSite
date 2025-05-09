@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 10.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    background: #333;
+    overflow: hidden;
+}
+
+.main-menu li {
+    float: left;
+}
+
+.main-menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.main-menu li a:hover {
+    background-color: #111;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background: #333;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.product-detail .product-image {
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+form {
+    max-width: 500px;
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.pagination {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.pagination a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+
+.pagination a.active {
+    background-color: #333;
+    color: white;
+    border: 1px solid #333;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
