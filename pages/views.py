@@ -1,28 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect
 from pages.models import Product
+from .forms import ProductForm
+
+from django.core.paginator import Paginator
 
 
 def home(request):
-    """
-    Отображение главной страницы с последними 5 добавленными продуктами
-    """
-    # Получаем последние 5 продуктов, отсортированных по дате создания (новые первыми)
-    latest_products = Product.objects.order_by('-created_at')[:5]
+    product_list = Product.objects.all().order_by('-created_at')
+    paginator = Paginator(product_list, 6)  # 6 товаров на странице
 
-    # Для отладки выводим в консоль
-    print("Последние 5 продуктов:")
-    for product in latest_products:
-        print(f"- {product.name} (Цена: {product.price}, Категория: {product.category.name})")
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
-    # Формируем контекст для шаблона
-    context = {
-        'title': 'Главная страница',
-        'products': latest_products,
-        'products_count': len(latest_products),
-    }
-
-    return render(request, 'pages/home.html', context)
-
+    return render(request, 'pages/home.html', {'page_obj': page_obj})
 
 def catalog(request):
     return render(request, 'pages/catalog.html')
@@ -32,3 +23,21 @@ def contacts(request):
 
 def category(request):
     return render(request, 'pages/category.html')
+
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'pages/product_detail.html', {'product': product})
+
+def add_product(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = ProductForm()
+
+    return render(request, 'pages/add_product.html', {'form': form})
+
+
+
