@@ -3,7 +3,7 @@
 {% block content %}
 <div class="product-detail">
     <h1>{{ product.name }}</h1>
-    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+    <img src="{{ product.image|media_path }}" alt="{{ product.name }}" class="product-image">
     <p class="price">Цена: {{ product.price }} руб.</p>
     <p class="category">Категория: {{ product.category.name }}</p>
     <div class="description">{{ product.description }}</div>

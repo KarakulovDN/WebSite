@@ -14,7 +14,7 @@ urlpatterns = [
     path('contacts/', views.contacts, name='contacts'),
     path('product/<int:pk>/', product_detail, name='product_detail'),
     path('add-product/', add_product, name='add_product'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,6 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 10.6;
     margin: 0;
     padding: 0;
 }
@@ -102,4 +101,38 @@ form input, form textarea, form select {
 
 .pagination a:hover:not(.active) {
     background-color: #ddd;
+}
+
+.navbar {
+    background-color: #f8f9fa;
+    padding: 1rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-links a.active {
+    font-weight: bold;
+    color: blue;
+}
+
+.footer {
+    z-index: 7;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    background: linear-gradient(to bottom, transparent 0%, transparent 30%, var(--dsr-bg) 30%, var(--dsr-bg) 100%);
 }

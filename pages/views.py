@@ -38,3 +38,6 @@ def add_product(request):
         form = ProductForm()
 
     return render(request, 'pages/add_product.html', {'form': form})
+
+
+
