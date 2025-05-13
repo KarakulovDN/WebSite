@@ -1,0 +1,21 @@
+{% extends "pages/base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+
+{% if products %}
+    <h2>Последние добавленные товары ({{ products_count }}):</h2>
+    <ul>
+    {% for product in products %}
+        <li>
+            <strong>{{ product.name }}</strong><br>
+            Цена: {{ product.price }}<br>
+            Категория: {{ product.category.name }}<br>
+            Добавлен: {{ product.created_at|date:"d.m.Y H:i" }}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Нет доступных товаров</p>
+{% endif %}
+
+{% endblock %}
