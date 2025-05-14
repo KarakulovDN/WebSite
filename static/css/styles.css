@@ -136,3 +136,13 @@ form input, form textarea, form select {
     bottom: 0px;
     background: linear-gradient(to bottom, transparent 0%, transparent 30%, var(--dsr-bg) 30%, var(--dsr-bg) 100%);
 }
+
+.product-image {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.product-image img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
