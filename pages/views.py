@@ -2,24 +2,19 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from pages.models import Product
 from .forms import ProductForm
+from django.views.generic import TemplateView
 
 from django.core.paginator import Paginator
 
 
-def home(request):
-    product_list = Product.objects.all().order_by('-created_at')
-    paginator = Paginator(product_list, 6)  # 6 товаров на странице
-
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-
-    return render(request, 'pages/home.html', {'page_obj': page_obj})
+class HomeView(TemplateView):
+    template_name = 'pages/home.html'
 
 def catalog(request):
     return render(request, 'pages/catalog.html')
 
-def contacts(request):
-    return render(request, 'pages/contacts.html')
+class ContactsView(TemplateView):
+    template_name = 'pages/contacts.html'
 
 def category(request):
     return render(request, 'pages/category.html')
