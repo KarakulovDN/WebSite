@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h1>Все статьи</h1>
+<ul>
+    {% for post in posts %}
+    <li>
+        <a href="{% url 'blog:detail' post.pk %}">{{ post.title }}</a>
+        (Просмотров: {{ post.views_count }})
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'blog:create' %}">Создать новую статью</a>
+{% endblock %}
